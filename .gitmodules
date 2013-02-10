@@ -1,3 +1,3 @@
 [submodule "node_modules/rasp2c"]
 	path = node_modules/rasp2c
-	url = git@github.com:ni-c/node-rasp2c.git
+	url = https://github.com/ni-c/node-rasp2c.git
