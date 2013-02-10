@@ -1,8 +1,8 @@
 #node-rasp2c-example
 
-node-rasp2c-example is an example project for the node module (node-rasp2c)[https://github.com/ni-c/node-rasp2c].
+node-rasp2c-example is an example project for the node module [node-rasp2c](https://github.com/ni-c/node-rasp2c).
 
-The used I2C circuit is based on an ATTiny2313. The circuit-schematics and ATTiny2313-Firmware can be found here: (https://github.com/ni-c/raspberry2c)[https://github.com/ni-c/raspberry2c].
+The used I2C circuit is build on a breadboard and based on an ATTiny2313, the schematics and the appropriate microcontroller firmware can be found here: https://github.com/ni-c/raspberry2c.
 
 ## MIT License
 
