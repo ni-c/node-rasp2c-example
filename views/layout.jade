@@ -4,6 +4,30 @@ html
     title raspberry2cjs
     link(rel='stylesheet', href='/css/bootstrap.min.css') 
     link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
-    script(data-main="javascripts/main", src="js/bootstrap.min.js")
+    link(rel='stylesheet', href='/css/raspberry2cjs.css')
+    script(data-main='/js/main', src='/js/require-jquery.js')
   body
+    div.navbar.navbar-inverse.navbar-fixed-top
+      div.navbar-inner
+        div.container
+          button.btn.btn-navbar(data-roggle="collapse", data-target=".nav-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href="/") raspberry2cjs
+          div.nav-collapse.collapse
+            ul.nav.pull-right#bar-menu-right
+              li
+                a(href="http://github.com/ni-c/raspberry2cjs") Source
+            ul.nav#bar-menu-left
+              li.active
+                a(href="/") Home
+              li.dropdown
+                a.dropdown-toggle(data-toggle="dropdown",href="") I2C Devices
+                  b.caret
+                ul.dropdown-menu
+                  each device in devices
+                    - device_id = "0x" + device.toString(16);
+                    li 
+                      a(href="/device/#{device_id}") #{device_id}  
     block content

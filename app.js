@@ -45,10 +45,12 @@ requirejs(['http', 'path', 'express', './routes'], function(http, path, express,
 	});
 
 	app.get('/', routes.index);
+	app.get('/device/:device_id', routes.devices);
+	app.get('/device/:device_id/set/:address/:value', routes.set);
 
-    app.get('ports').forEach(function(port) {
-      http.createServer(app).listen(port, function() {
-        console.log('\u001b[32mExpress server listening on port \u001b[33m' + port + '\033[0m');
-      });
+  app.get('ports').forEach(function(port) {
+    http.createServer(app).listen(port, 'localhost', function() {
+      console.log('\u001b[32mExpress server listening on port \u001b[33m%d\u001b[32m at \u001b[33mlocalhost\033[0m', port);
     });
+  });
 });

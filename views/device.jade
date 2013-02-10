@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div.container  
+    h1 I2C Device: 
+      span.muted #{device_id}
+    table
+      thead
+        tr
+          td Address
+          td Description
+          td Status
+      tbody
+        tr
+          td
+            span.muted 0x00
+          td LED
+          td
+            div.class.btn-group(data-toggle="buttons-radio")
+              button.btn.btn-mini.i2cset.active(data-device="#{device_id}",data-address="0x00",data-value="0xff",type="button",name="ledswitch")
+                i.icon-ok.icon.white
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x00",data-value="0x00",type="button",name="ledswitch")
+                i.icon-remove
