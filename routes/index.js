@@ -1,5 +1,5 @@
 /**
-* oauth2js (https://github.com/ni-c/raspberry2cjs)
+* node-rasp2c-example (https://github.com/ni-c/node-rasp2c-example)
 *
 * @file routes/index.js
 * @brief Raspberry I2C
@@ -14,18 +14,10 @@ if( typeof define !== 'function') {
 define(['rasp2c'], function(rasp2c) {
 	var routes = {};
 
+  /**
+   * /
+   */
 	routes.index = function(req, res) {
-		/*
-		rasp2c.dump(26, "0x00-0x01", function(err,result) {
-			if (result[0]==0) {
-				rasp2c.set(26, 0, 255, function(err, result) {
-				});
-			} else {
-				rasp2c.set(26, 0, 0, function(err, result) {
-				});
-			}
-		});
-		*/
 		rasp2c.detect(function(err, devices) {
 			res.render('index', {
         devices: devices
@@ -33,6 +25,9 @@ define(['rasp2c'], function(rasp2c) {
 		});
 	};
 
+  /**
+   * /device
+   */
   routes.devices = function(req, res) {
 		rasp2c.detect(function(err, devices) {
 			res.render('device', {
@@ -42,6 +37,9 @@ define(['rasp2c'], function(rasp2c) {
 		});
   }
 
+	/**
+	 * /device/:device_id/set/:address/:value
+	 */
   routes.set = function(req, res) {
   	var device_id = req.params.device_id;
 		var address = req.params.address;

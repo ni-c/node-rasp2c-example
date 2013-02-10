@@ -1,5 +1,5 @@
 /**
-* oauth2js (https://github.com/ni-c/raspberry2cjs)
+* node-rasp2c-example (https://github.com/ni-c/node-rasp2c-example)
 *
 * @file app.js
 * @brief Raspberry I2C
@@ -50,7 +50,7 @@ requirejs(['http', 'path', 'express', './routes'], function(http, path, express,
 
   app.get('ports').forEach(function(port) {
     http.createServer(app).listen(port, 'localhost', function() {
-      console.log('\u001b[32mExpress server listening on port \u001b[33m%d\u001b[32m at \u001b[33mlocalhost\033[0m', port);
+      console.log('\u001b[32mnode-rasp2c-example listening on port \u001b[33m%d\u001b[32m at \u001b[33mlocalhost\033[0m', port);
     });
   });
 });
