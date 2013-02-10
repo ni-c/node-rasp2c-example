@@ -14,10 +14,28 @@ block content
         tr
           td
             span.muted 0x00
-          td LED
+          td LED red
           td
             div.class.btn-group(data-toggle="buttons-radio")
               button.btn.btn-mini.i2cset.active(data-device="#{device_id}",data-address="0x00",data-value="0xff",type="button",name="ledswitch")
                 i.icon-ok.icon.white
               button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x00",data-value="0x00",type="button",name="ledswitch")
                 i.icon-remove
+        tr
+          td
+            span.muted 0x01
+          td LED green
+          td
+            div.class.btn-group(data-toggle="buttons-radio")
+              button.btn.btn-mini.i2cset.active(data-device="#{device_id}",data-address="0x01",data-value="0x00",type="button",name="ledswitch") 0%
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x01",data-value="0x19",type="button",name="ledswitch") 10%
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x01",data-value="0x32",type="button",name="ledswitch") 20%
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x01",data-value="0x4b",type="button",name="ledswitch") 30%
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x01",data-value="0x64",type="button",name="ledswitch") 40%
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x01",data-value="0x7d",type="button",name="ledswitch") 50%
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x01",data-value="0x96",type="button",name="ledswitch") 60%
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x01",data-value="0xaf",type="button",name="ledswitch") 70%
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x01",data-value="0xc8",type="button",name="ledswitch") 80%
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x01",data-value="0xe1",type="button",name="ledswitch") 90%
+              button.btn.btn-mini.i2cset(data-device="#{device_id}",data-address="0x01",data-value="0xff",type="button",name="ledswitch") 100%
+                
