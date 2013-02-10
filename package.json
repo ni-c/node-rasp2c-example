@@ -1,5 +1,5 @@
 {
-  "name": "raspberry2cjs",
+  "name": "node-rasp2c-example",
   "version": "0.0.1",
   "private": true,
   "scripts": {
