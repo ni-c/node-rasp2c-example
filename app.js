@@ -25,7 +25,6 @@ requirejs(['http', 'path', 'express', 'socket.io', 'rasp2c', './routes'], functi
 
 	app.configure(function() {
 		app.set('port', 8000);
-		app.set('host', 'raspberrypi');
 		app.set('views', __dirname + '/views');
 		app.set('view engine', 'jade');
 		app.use(express.favicon());
@@ -44,7 +43,6 @@ requirejs(['http', 'path', 'express', 'socket.io', 'rasp2c', './routes'], functi
 	app.get('/', routes.index);
 	app.get('/device/:device_id', routes.devices);
 
-	app.get('/js/config.js', routes.config);
 	app.get('/js/socket.io.min.js', function(req, res) {
 		res.sendfile(__dirname + '/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.min.js');
 	});

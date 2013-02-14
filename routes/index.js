@@ -54,11 +54,4 @@ define(['rasp2c'], function(rasp2c) {
 			}
 		});
 	}
-
-	routes.config = function(req, res) {
-		res.charset = 'utf-8';
-		res.setHeader('Content-Type', 'text/javascript');
-  	return res.send('var host = "' + req.app.get('host') + '";');
-	}
-	return routes;
 });

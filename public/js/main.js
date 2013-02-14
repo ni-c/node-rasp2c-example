@@ -1,6 +1,6 @@
-require(["jquery", "/js/bootstrap.min.js", "/js/socket.io.min.js", "/js/config.js"], function() {
+require(["jquery", "/js/bootstrap.min.js", "/js/socket.io.min.js"], function() {
 
-	var socket = io.connect('http://' + host);
+	var socket = io.connect();
 	
 	socket.on('i2cset', function(data) {
 		$('*[data-device=' + data.device_id + '][data-address=' + data.address + ']').removeClass('active');
